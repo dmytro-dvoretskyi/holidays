@@ -74,8 +74,8 @@ def main(ideas_file_path, openai_api_key, holiday_api_key):
     else: 
         st.markdown("**Ідеї не обрані**")
 
-OPENAI = "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" #st.secrets["OPENAI"]
-HOLIDAYS = "cc7cb824-b26d-40d2-81c2-80ee0bff24de" #st.secrets["HOLIDAYS"]
+OPENAI = st.secrets["OPENAI"]
+HOLIDAYS = st.secrets["HOLIDAYS"]
 PATH_TO_FILE = './new_year.json'
 # Виклик функції з необхідними параметрами
 main(PATH_TO_FILE, OPENAI, HOLIDAYS)
