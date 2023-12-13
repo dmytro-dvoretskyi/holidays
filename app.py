@@ -62,12 +62,13 @@ def main(ideas_file_path, openai_api_key, holiday_api_key):
     prompt = create_prompt(holidays, ideas)
     selected_ideas = call_openai_gpt(prompt, openai_api_key)
 
-    print("Грудневі свята:")
+    st.title("Святкові ідеї")
+    st.markdown("#### Грудневі свята:")
     for holiday in holidays:
-        print(f"{holiday['name']} ({holiday['date']})")
+        st.markdown(f"{holiday['name']} ({holiday['date']})")
 
-    print("Обрані GPT ідеї із поясненням:")
-    print(selected_ideas)
+    st.markdown"#### Обрані GPT ідеї із поясненням:")
+    st.markdown(selected_ideas)
 
 # Виклик функції з необхідними параметрами
 main('./new_year.json', st.secrets["OPENAI"], st.secrets["HOLIDAYS"])
